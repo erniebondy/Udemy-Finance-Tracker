@@ -1,7 +1,12 @@
-<h1>Welcome to the internet!</h1>
 
-<p>we have fun and games!</p>
+<div class="container pt-4">
 
-<!-- Path is from Devise -->
-<!-- Check rails routes | grep user for more info -->
-<%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
+  <h1>Welcome to the internet!</h1>
+
+  <p>we have fun and games!</p>
+
+  <!-- Path is from Devise -->
+  <!-- Check rails routes | grep user for more info -->
+  <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
+
+</div>
