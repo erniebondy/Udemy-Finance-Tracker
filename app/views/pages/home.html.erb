@@ -5,6 +5,17 @@
 
   <p>we have fun and games!</p>
 
+  <% client = Alphavantage::Client.new key: "demo" %>
+  <% stock = client.stock symbol: "IBM" %>
+  <div class="container pb-4">
+    <%#= stock.quote.output["Global Quote"]["01. symbol"] %>
+    <%#= stock.quote.symbol %>
+    <% stock.quote.output["Global Quote"].each do |k, v| %>
+      <%= "#{ k }: #{ v }" %><br>
+    <% end %>
+  </div>
+  <%# stock = Alphavantage::Stock.new symbol: "IBM", key: "demo" %>
+  
   <!-- Path is from Devise -->
   <!-- Check rails routes | grep user for more info -->
   <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
