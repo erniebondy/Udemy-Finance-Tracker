@@ -1,14 +1,12 @@
-<% if @stock %>
-  <div class="stock-area pt-4">
+<%= render "layouts/messages" %>
 
-    <div class="card col-sm-9">
-      <div class="card-body">
-        <h5 class="card-title"><%= @stock.name %></h5>
-        <p class="card-text">
-          Ticker: <%= @stock.ticker %> : $<%= @stock.last_price %>  
-        </p>
-      </div>
+<% if @stock %>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= @stock.name %></h5>
+      <p class="card-text">
+        Ticker: <%= @stock.ticker %> : $<%= @stock.last_price %>  
+      </p>
     </div>
-    
   </div>
 <% end %>

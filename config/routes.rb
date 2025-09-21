@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   get "portfolio", to: "users#portfolio"
   get "search_stock", to: "stocks#search"
 
+  resources :user_stocks
   devise_for :users
 end

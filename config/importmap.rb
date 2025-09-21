@@ -12,7 +12,7 @@ pin "bootstrap", to: "bootstrap.bundle.min.js"
 ### Bring back the old AJAX style of form submission
 ### This should be handled by Turbo now...
 #
-# importmap pin @rails/ujs
+# rails console command: importmap pin @rails/ujs
 pin "@rails/ujs", to: "@rails--ujs.js" # @7.1.3
 
 

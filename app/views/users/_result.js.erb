@@ -1,0 +1,6 @@
+// and I quote the 'j' escapes the javascript
+// j = escape_javascript
+// ChatGPT clarified, the 'j' escapes what's being rendered
+// for instance, all the unescaped "" now become \" \", etc.
+// And the function is a Rails function, therefore it's AFTER the embedded Ruby tag
+document.querySelector("#results").innerHTML = "<%= j render(partial: 'users/result', formats: [:html]) %>";
