@@ -9,6 +9,12 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 ### pin "name_used_in_import", to: "path_to_file"
 pin "bootstrap", to: "bootstrap.bundle.min.js"
 
+### Bring back the old AJAX style of form submission
+### This should be handled by Turbo now...
+#
+# importmap pin @rails/ujs
+pin "@rails/ujs", to: "@rails--ujs.js" # @7.1.3
+
 
 ### And remember, it was soo difficult downloading the file from
 ### the official website and adding it to the folder

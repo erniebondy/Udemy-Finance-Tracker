@@ -14,5 +14,8 @@ Rails.application.routes.draw do
   #
   root "pages#home"
 
+  get "portfolio", to: "users#portfolio"
+  get "search_stock", to: "stocks#search"
+
   devise_for :users
 end

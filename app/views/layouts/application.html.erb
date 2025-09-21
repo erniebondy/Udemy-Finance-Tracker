@@ -18,6 +18,10 @@
     <link rel="apple-touch-icon" href="/icon.png">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <!-- Ensure the assets are pinned if not in assets/ -->
+    <!-- Rails.application.config.assets.paths << "vendor/stylesheets" -->
+    <%= stylesheet_link_tag "bootstrap.min.css", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "bootstrap-icons/bootstrap-icons.min.css", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
@@ -66,6 +70,9 @@
     <!-- From Devise -->
     <!-- <p class= "notice"><%= notice %></p> -->
     <!-- <p class= "alert"><%= alert %></p> -->
-    <%= yield %>
+    <div class="container p-4">
+      <%= yield %>
+    </div>
+
   </body>
 </html>

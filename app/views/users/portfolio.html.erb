@@ -1,0 +1,35 @@
+<h1>Portfolio</h1>
+
+<div class="search-area pt-4">
+  
+  <h3>Search stocks</h3>
+
+  <!-- We will submit the form via ajax -->
+  <!-- Set remote= true -->
+
+  <!-- 
+  <form action="search_stock" method="get" data-remote="true">
+    <input type="text" name="stock" id="text1" placeholder="Stock ticker symbol">
+  </form>
+  -->
+
+  <%= form_tag search_stock_path, method: :get, data: { turbo: false, remote: true } do %>
+    <div class="form-group row">
+      <div class="col-sm-9 pe-1 pb-2">
+        <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", 
+                                   autofocus: true, class: "form-control form-control-lg" %>
+      </div>
+      <div class="col-sm-3 ps-1">
+        <%= button_tag class: "btn btn-success" do %>
+          <i class="bi bi-search"></i> <%= "Search" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+
+<%#= render "users/result" %>
+<div id="results">
+   
+</div>
