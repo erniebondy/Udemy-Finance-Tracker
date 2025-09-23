@@ -9,12 +9,16 @@ class Stock < ApplicationRecord
 
   ## Use the 'self.' to create an instance method
   def self.new_lookup(ticker)
+    if ticker.class == Hash
+      ticker = ticker[:ticker]
+    end
+
+    # client = Alphavantage::Client.new key: Rails.application.credentials.alphavantage[:free_api_key]
     client = Alphavantage::Client.new key: "demo" # Rails.application.credentials.alphavantage[:free_api_key]
 
     begin
       stock = client.stock(symbol: ticker)
       overview = client.request("function=OVERVIEW&symbol=#{ticker}")
-
       ## Create new object
       new(ticker: ticker, name: overview["Name"], last_price: stock.quote.price)
     rescue
